@@ -1,5 +1,5 @@
 %define name glpi-plugin-datainjection
-%define version 1.7.1
+%define version 2.1.2
 %define release %mkrel 1
 
 Summary: SNMP agent plugin
@@ -9,7 +9,7 @@ Release: %{release}
 License: GPL
 Group: Monitoring
 Url: https://forge.indepnet.net/projects/show/datainjection
-Source0: https://forge.indepnet.net/attachments/download/496/glpi-datainjection-%{version}.tar.gz
+Source0: https://forge.indepnet.net/attachments/download/1010/glpi-datainjection-%{version}.tar.gz
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
