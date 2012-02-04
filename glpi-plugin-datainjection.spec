@@ -1,17 +1,21 @@
-%define name glpi-plugin-datainjection
-%define version 2.1.2
-%define release %mkrel 1
+%if %mandriva_branch == Cooker
+%define release %mkrel 3
+%else
+%define subrel 1
+%define release %mkrel 0
+%endif
 
 Summary: SNMP agent plugin
-Name: %{name}
-Version: %{version}
+Name: glpi-plugin-datainjection
+Version: 2.1.2
 Release: %{release}
 License: GPL
 Group: Monitoring
 Url: https://forge.indepnet.net/projects/show/datainjection
 Source0: https://forge.indepnet.net/attachments/download/1010/glpi-datainjection-%{version}.tar.gz
 BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}
+Provides: glpi-data-injection = %{version}-%{release}
+Obsoletes: glpi-data-injection
 
 %description
 This plugin allows data import into GLPI using CSV files
@@ -25,17 +29,18 @@ Datas to be imported using the plugains are :
 - Configuration datas (user, group, entity)
 
 %prep
+
 %setup -q -n datainjection
 
+find . -type f | xargs chmod 644
+find . -type d | xargs chmod 755
+
 %install
-rm -rf %{buildroot}
 
 install -d -m 755 %{buildroot}%{_datadir}/glpi/plugins/datainjection
 cp -ap * %{buildroot}%{_datadir}/glpi/plugins/datainjection
-
-%clean
-rm -rf %{buildroot}
+rm -rf %{buildroot}%{_datadir}/glpi/plugins/datainjection/docs
 
 %files
-%defattr(-,root,root)
+%doc docs/*
 %{_datadir}/glpi/plugins/datainjection
