@@ -44,3 +44,18 @@ rm -rf %{buildroot}%{_datadir}/glpi/plugins/datainjection/docs
 %files
 %doc docs/*
 %{_datadir}/glpi/plugins/datainjection
+
+
+%changelog
+* Sat Feb 04 2012 Oden Eriksson <oeriksson@mandriva.com> 2.1.2-3mdv2012.0
++ Revision: 771126
+- various fixes
+
+* Sat Feb 04 2012 Oden Eriksson <oeriksson@mandriva.com> 2.1.2-1
++ Revision: 771079
+- 2.1.2
+
+* Mon Nov 15 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.7.1-1mdv2011.0
++ Revision: 597753
+- import glpi-plugin-datainjection
+
