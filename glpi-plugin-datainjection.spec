@@ -1,8 +1,8 @@
 %if %mandriva_branch == Cooker
-%define release %mkrel 3
+%define release 4
 %else
 %define subrel 1
-%define release %mkrel 0
+%define release 1
 %endif
 
 Summary: SNMP agent plugin
